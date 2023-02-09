@@ -1,0 +1,1 @@
+export { CardIngridient } from './CardIngridient'

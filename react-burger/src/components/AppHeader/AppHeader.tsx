@@ -8,8 +8,11 @@ import { BurgerIcon, Logo } from '@ya.praktikum/react-developer-burger-ui-compon
 export const AppHeader = () => {
 	return (
 		<header className='header-container m-10'>
-			<Nav />
-			<Logo />
+			<div style={{ display: 'flex', gap: '5.5vw' }}>
+				<Nav />
+				<Logo />
+			</div>
+
 			<NavButton title='Личный аккаунт'>
 				<BurgerIcon type='secondary' />
 			</NavButton>

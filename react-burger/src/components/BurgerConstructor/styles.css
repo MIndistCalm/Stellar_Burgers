@@ -1,0 +1,26 @@
+.constructor-section {
+	display: grid;
+	max-width: max-content;
+	width: 600px;
+	align-self: start;
+	justify-self: start;
+}
+
+.constructor-container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.constructor-footer {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.constructor-drag-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}

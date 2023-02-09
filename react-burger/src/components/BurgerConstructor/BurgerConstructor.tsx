@@ -1,0 +1,79 @@
+import { Button, ConstructorElement, CurrencyIcon, DragIcon } from '@ya.praktikum/react-developer-burger-ui-components'
+import React from 'react'
+import { Data } from '../../types'
+
+import './styles.css'
+
+interface DataProps {
+	data: Data[]
+}
+
+export const BurgerConstructor = ({ data }: DataProps) => {
+	return (
+		<section className='constructor-section mt-15 ml-4 mr-4'>
+			<article className='constructor-container'>
+				<ConstructorElement
+					type='top'
+					isLocked={true}
+					text='Краторная булка N-200i (верх)'
+					price={200}
+					thumbnail={data[0].image}
+					extraClass='ml-8'
+				/>
+				<div className='constructor-drag-item'>
+					<DragIcon type='primary' />
+					<ConstructorElement
+						text='Краторная булка N-200i (верх)'
+						price={50}
+						thumbnail={data[0].image}
+					/>
+				</div>
+				<div className='constructor-drag-item'>
+					<DragIcon type='primary' />
+					<ConstructorElement
+						text='Краторная булка N-200i (верх)'
+						price={50}
+						thumbnail={data[0].image}
+					/>
+				</div>
+				<div className='constructor-drag-item'>
+					<DragIcon type='primary' />
+					<ConstructorElement
+						text='Краторная булка N-200i (верх)'
+						price={50}
+						thumbnail={data[0].image}
+					/>
+				</div>
+				<div className='constructor-drag-item'>
+					<DragIcon type='primary' />
+					<ConstructorElement
+						text='Краторная булка N-200i (верх)'
+						price={50}
+						thumbnail={data[0].image}
+					/>
+				</div>
+
+				<ConstructorElement
+					type='bottom'
+					isLocked={true}
+					text='Краторная булка N-200i (низ)'
+					price={200}
+					thumbnail={data[0].image}
+					extraClass='ml-8'
+				/>
+			</article>
+			<footer className='constructor-footer mt-10'>
+				<span className='text text_type_digits-medium mr-2'>1280</span>
+				<CurrencyIcon type='primary' />
+				<Button
+					htmlType='button'
+					type='primary'
+					size='large'
+          extraClass='ml-10'
+				>
+					Оформить заказ
+				</Button>
+			</footer>
+		</section>
+	)
+}
