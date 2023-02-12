@@ -1,10 +1,10 @@
-.items-centered {
+.items_centered {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 
-.custom-button {
+.custom_button {
 	border: 0;
 	background-color: transparent;
 	color: rgb(133, 133, 173);
@@ -12,15 +12,15 @@
   cursor: pointer;
 }
 
-.custom-button svg {
+.custom_button svg {
 	fill: inherit;
 }
 
-.custom-button:hover {
+.custom_button:hover {
 	color: rgb(242, 242, 243);
 	fill: rgb(242, 242, 243);
 }
 
-.text-title {
+.text_title {
 	font-size: 20px;
 }

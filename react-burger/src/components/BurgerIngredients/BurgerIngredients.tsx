@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
-import { CardIngridient } from './CardIngridient'
-import { Tabs } from './Tabs'
+import { CardIngridient } from './components/card-ingridient'
+import { Tabs } from './components/Tabs'
 import { Data } from '../../types'
 
-import './styles.css'
+import styles from './styles.module.css'
+import { TabsEnum } from '../../enums/enums'
 
 interface DataProps {
 	data: Data[]
 }
 
 export const BurgerIngredients = ({ data }: DataProps) => {
-	const [current, setCurrent] = useState('one')
+	const [current, setCurrent] = useState(TabsEnum.BUN.toString())
+
 	return (
-		<section className='ingredients-section'>
+		<section className={`${styles.ingredients_section}`}>
 			<header className='mb-10'>
 				<h1 className='text text_type_main-large mb-5'>Соберите бургер</h1>
 				<Tabs
@@ -20,10 +22,10 @@ export const BurgerIngredients = ({ data }: DataProps) => {
 					setCurrent={setCurrent}
 				/>
 			</header>
-			<article className='categories-container'>
+			<article className={`${styles.categories_container}`}>
 				<div>
 					<h2 className='text text_type_main-medium mb-6'>Булки</h2>
-					<section className='categories-section pr-4 pl-4 pb-10'>
+					<section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
 						{data &&
 							data.map((item) => {
 								return item.type === 'bun' && <CardIngridient ingridient={item} />
@@ -32,7 +34,7 @@ export const BurgerIngredients = ({ data }: DataProps) => {
 				</div>
 				<div>
 					<h2 className='text text_type_main-medium mb-6'>Соусы</h2>
-					<section className='categories-section pr-4 pl-4 pb-10'>
+					<section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
 						{data &&
 							data.map((item) => {
 								return item.type === 'sauce' && <CardIngridient ingridient={item} />
@@ -41,7 +43,7 @@ export const BurgerIngredients = ({ data }: DataProps) => {
 				</div>
 				<div>
 					<h2 className='text text_type_main-medium mb-6'>Начинки</h2>
-					<section className='categories-section pr-4 pl-4 pb-10'>
+					<section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
 						{data &&
 							data.map((item) => {
 								return item.type === 'main' && <CardIngridient ingridient={item} />

@@ -1,5 +1,6 @@
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components'
 import React, { Dispatch, SetStateAction } from 'react'
+import { TabsEnum } from '../../../../enums/enums'
 
 interface TabsProps {
 	current: string
@@ -10,22 +11,22 @@ export const Tabs = ({ current, setCurrent }: TabsProps) => {
 	return (
 		<div style={{ display: 'flex' }}>
 			<Tab
-				value='one'
-				active={current === 'one'}
+				value={TabsEnum.BUN.toString()}
+				active={current === TabsEnum.BUN.toString()}
 				onClick={setCurrent}
 			>
 				Булки
 			</Tab>
 			<Tab
-				value='two'
-				active={current === 'two'}
+				value={TabsEnum.SAUCE.toString()}
+				active={current === TabsEnum.SAUCE.toString()}
 				onClick={setCurrent}
 			>
 				Соусы
 			</Tab>
 			<Tab
-				value='three'
-				active={current === 'three'}
+				value={TabsEnum.FILLINGS.toString()}
+				active={current === TabsEnum.FILLINGS.toString()}
 				onClick={setCurrent}
 			>
 				Начинки

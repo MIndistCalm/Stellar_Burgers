@@ -2,7 +2,7 @@ import { Button, ConstructorElement, CurrencyIcon, DragIcon } from '@ya.praktiku
 import React from 'react'
 import { Data } from '../../types'
 
-import './styles.css'
+import styles from './styles.module.css'
 
 interface DataProps {
 	data: Data[]
@@ -10,8 +10,8 @@ interface DataProps {
 
 export const BurgerConstructor = ({ data }: DataProps) => {
 	return (
-		<section className='constructor-section mt-15 ml-4 mr-4'>
-			<article className='constructor-container'>
+		<section className={`${styles.constructor_section} mt-15 ml-4 mr-4`}>
+			<article className={`${styles.constructor_container}`}>
 				<ConstructorElement
 					type='top'
 					isLocked={true}
@@ -25,7 +25,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
 					<ConstructorElement
 						text='Краторная булка N-200i (верх)'
 						price={50}
-						thumbnail={data[0].image}
+						thumbnail={data[2].image}
 					/>
 				</div>
 				<div className='constructor-drag-item'>
@@ -69,7 +69,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
 					htmlType='button'
 					type='primary'
 					size='large'
-          extraClass='ml-10'
+					extraClass='ml-10'
 				>
 					Оформить заказ
 				</Button>
