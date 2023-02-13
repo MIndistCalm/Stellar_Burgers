@@ -1,0 +1,35 @@
+.ingredients_section {
+	display: grid;
+	max-width: 600px;
+	width: 600px;
+	align-self: center;
+	justify-self: end;
+}
+
+.categories_container {
+	display: flex;
+	flex-direction: column;
+	overflow-y: scroll;
+	overflow-x: hidden;
+	max-height: 70vh;
+}
+.categories_container::-webkit-scrollbar {
+	width: 8px; /* ширина для вертикального скролла */
+	height: 8px; /* высота для горизонтального скролла */
+	background-color: #2f2f37;
+}
+
+/* ползунок скроллбара */
+.categories_container::-webkit-scrollbar-thumb {
+	background-color: #8585ad;
+}
+
+.categories_container::-webkit-scrollbar-thumb:hover {
+	background-color: #4a4a64;
+}
+
+.categories_section {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0px 24px;
+}

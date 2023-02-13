@@ -1,0 +1,13 @@
+.header_container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 16vw;
+	background-color: #1c1c21;
+  height: 88px;
+}
+
+.nav_gap {
+   display: flex; 
+   gap: 5.5vw;
+}
