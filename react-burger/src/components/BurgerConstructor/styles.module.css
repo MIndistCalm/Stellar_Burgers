@@ -26,6 +26,10 @@
   gap: 5px;
 }
 
-.price-block {
+.price_block {
   width: fit-content;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

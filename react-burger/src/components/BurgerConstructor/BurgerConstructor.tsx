@@ -67,11 +67,11 @@ export const BurgerConstructor = ({ data }: DataProps) => {
           extraClass="ml-8"
         />
       </article>
-      <footer className="constructor-footer mt-10">
-        <div className="price-block">
+      <footer className={`${styles["constructor_footer"]} mt-10`}>
+        <span className={`${styles["price_block"]}`}>
           <span className="text text_type_digits-medium mr-2">1280</span>
           <CurrencyIcon type="primary" />
-        </div>
+        </span>
         <Button
           htmlType="button"
           type="primary"
