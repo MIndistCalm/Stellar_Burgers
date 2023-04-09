@@ -4,16 +4,20 @@ import {
   CurrencyIcon,
   DragIcon,
 } from "@ya.praktikum/react-developer-burger-ui-components";
-import React from "react";
+import React, { useState } from "react";
 import { Data } from "../../types";
 
 import styles from "./styles.module.css";
+import { Modal } from "../Modal";
+import Check from "../../images/Check/Check";
 
 interface DataProps {
   data: Data[];
 }
 
 export const BurgerConstructor = ({ data }: DataProps) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <section className={`${styles.constructor_section} mt-15 ml-4 mr-4`}>
       <article className={`${styles.constructor_container}`}>
@@ -63,10 +67,46 @@ export const BurgerConstructor = ({ data }: DataProps) => {
           type="primary"
           size="large"
           extraClass="ml-10"
+          onClick={() => setShowModal(true)}
         >
           Оформить заказ
         </Button>
       </footer>
+      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title={""}>
+        <div className={[styles["popup"]].join(" ")}>
+          <p
+            className={[
+              styles["popup_text_glow"],
+              "text text_type_digits-large pb-8",
+            ].join(" ")}
+          >
+            034536
+          </p>
+          <p
+            className={[styles[""], "text text_type_main-medium pb-15"].join(
+              " "
+            )}
+          >
+            идентификатор заказа
+          </p>
+          <Check className="pb-15" />
+          <p
+            className={[styles[""], "text text_type_main-default pb-2"].join(
+              " "
+            )}
+          >
+            Ваш заказ начали готовить
+          </p>
+          <p
+            className={[
+              styles["popup_text_gray"],
+              "text text_type_main-default pb-20",
+            ].join(" ")}
+          >
+            Дождитесь готовности на орбитальной станции
+          </p>
+        </div>
+      </Modal>
     </section>
   );
 };
