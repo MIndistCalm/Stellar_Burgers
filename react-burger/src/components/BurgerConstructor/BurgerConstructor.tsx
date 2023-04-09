@@ -29,7 +29,10 @@ export const BurgerConstructor = ({ data }: DataProps) => {
           {data.map((item) => {
             return (
               item.type !== "bun" && (
-                <div className={`${styles["constructor_drag_item"]}`}>
+                <div
+                  key={item._id}
+                  className={`${styles["constructor_drag_item"]}`}
+                >
                   <DragIcon type="primary" />
                   <ConstructorElement
                     text={item.name}
