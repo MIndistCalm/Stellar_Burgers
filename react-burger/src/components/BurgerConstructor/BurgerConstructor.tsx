@@ -25,39 +25,22 @@ export const BurgerConstructor = ({ data }: DataProps) => {
           thumbnail={data[0].image}
           extraClass="ml-8"
         />
-        <div className={`${styles["constructor_drag_item"]}`}>
-          <DragIcon type="primary" />
-          <ConstructorElement
-            text="Краторная булка N-200i (верх)"
-            price={50}
-            thumbnail={data[2].image}
-          />
+        <div className={`${styles["non_fixed_block"]} pr-2`}>
+          {data.map((item) => {
+            return (
+              item.type !== "bun" && (
+                <div className={`${styles["constructor_drag_item"]}`}>
+                  <DragIcon type="primary" />
+                  <ConstructorElement
+                    text={item.name}
+                    price={50}
+                    thumbnail={item.image}
+                  />
+                </div>
+              )
+            );
+          })}
         </div>
-        <div className={`${styles["constructor_drag_item"]}`}>
-          <DragIcon type="primary" />
-          <ConstructorElement
-            text="Краторная булка N-200i (верх)"
-            price={50}
-            thumbnail={data[0].image}
-          />
-        </div>
-        <div className={`${styles["constructor_drag_item"]}`}>
-          <DragIcon type="primary" />
-          <ConstructorElement
-            text="Краторная булка N-200i (верх)"
-            price={50}
-            thumbnail={data[0].image}
-          />
-        </div>
-        <div className={`${styles["constructor_drag_item"]}`}>
-          <DragIcon type="primary" />
-          <ConstructorElement
-            text="Краторная булка N-200i (верх)"
-            price={50}
-            thumbnail={data[0].image}
-          />
-        </div>
-
         <ConstructorElement
           type="bottom"
           isLocked={true}
