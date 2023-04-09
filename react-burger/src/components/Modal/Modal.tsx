@@ -35,11 +35,11 @@ export const Modal: React.FC<ModalProps> = ({
   }
 
   return ReactDOM.createPortal(
-    <ModalOverlay>
+    <ModalOverlay onClose={onClose}>
       <div className={`${styles["modal"]}`}>
         <div className={styles["modal_title_container"]}>
           <span className={"text text_type_main-large"}>{title}</span>
-          <div className={styles["modal_close"]} onClick={() => onClose()}>
+          <div className={styles["modal_close"]} onClick={onClose}>
             <CloseIcon type="primary" />
           </div>
         </div>
