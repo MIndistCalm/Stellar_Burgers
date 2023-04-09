@@ -25,7 +25,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
           thumbnail={data[0].image}
           extraClass="ml-8"
         />
-        <div className="constructor-drag-item">
+        <div className={`${styles["constructor_drag_item"]}`}>
           <DragIcon type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
@@ -33,7 +33,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
             thumbnail={data[2].image}
           />
         </div>
-        <div className="constructor-drag-item">
+        <div className={`${styles["constructor_drag_item"]}`}>
           <DragIcon type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
@@ -41,7 +41,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
             thumbnail={data[0].image}
           />
         </div>
-        <div className="constructor-drag-item">
+        <div className={`${styles["constructor_drag_item"]}`}>
           <DragIcon type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
@@ -49,7 +49,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
             thumbnail={data[0].image}
           />
         </div>
-        <div className="constructor-drag-item">
+        <div className={`${styles["constructor_drag_item"]}`}>
           <DragIcon type="primary" />
           <ConstructorElement
             text="Краторная булка N-200i (верх)"
