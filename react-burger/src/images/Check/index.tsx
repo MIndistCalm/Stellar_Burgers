@@ -4,7 +4,7 @@ export interface CheckProps {
   className?: string;
 }
 
-const Check: FC<CheckProps> = ({ className }) => {
+export const Check: FC<CheckProps> = ({ className }) => {
   return (
     <div className={`${className}`}>
       <svg
@@ -80,5 +80,3 @@ const Check: FC<CheckProps> = ({ className }) => {
     </div>
   );
 };
-
-export default Check;

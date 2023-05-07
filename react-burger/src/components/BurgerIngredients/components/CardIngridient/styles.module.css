@@ -1,0 +1,14 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+}
+.card:hover {
+  background-color: rgba(28, 28, 33, 1);
+}
+
+.text_centered {
+  text-align: center;
+}

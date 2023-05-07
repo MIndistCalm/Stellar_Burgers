@@ -8,8 +8,7 @@ import React, { useState } from "react";
 import { Data } from "../../types";
 
 import styles from "./styles.module.css";
-import { Modal } from "../Modal";
-import Check from "../../images/Check/Check";
+import BurgerModal from "./BurgerModal";
 
 interface DataProps {
   data: Data[];
@@ -72,41 +71,7 @@ export const BurgerConstructor = ({ data }: DataProps) => {
           Оформить заказ
         </Button>
       </footer>
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} title={""}>
-        <div className={[styles["popup"]].join(" ")}>
-          <p
-            className={[
-              styles["popup_text_glow"],
-              "text text_type_digits-large pb-8",
-            ].join(" ")}
-          >
-            034536
-          </p>
-          <p
-            className={[styles[""], "text text_type_main-medium pb-15"].join(
-              " "
-            )}
-          >
-            идентификатор заказа
-          </p>
-          <Check className="pb-15" />
-          <p
-            className={[styles[""], "text text_type_main-default pb-2"].join(
-              " "
-            )}
-          >
-            Ваш заказ начали готовить
-          </p>
-          <p
-            className={[
-              styles["popup_text_gray"],
-              "text text_type_main-default pb-20",
-            ].join(" ")}
-          >
-            Дождитесь готовности на орбитальной станции
-          </p>
-        </div>
-      </Modal>
+      {showModal ? <BurgerModal onClose={() => setShowModal(false)} /> : null}
     </section>
   );
 };

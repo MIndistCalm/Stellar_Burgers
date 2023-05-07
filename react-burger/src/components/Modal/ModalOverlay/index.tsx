@@ -4,23 +4,16 @@ import styles from "./styles.module.css";
 
 export interface ModalOverlayProps {
   onClose?: () => void;
-  children?: React.ReactNode;
 }
 
-const ModalOverlay: FC<ModalOverlayProps> = ({
-  children,
-  onClose = () => {},
-}) => {
+const ModalOverlay: FC<ModalOverlayProps> = ({ onClose = () => {} }) => {
   return (
     <div
       className={styles["modal-overlay"]}
-      onClick={(e) => {
-        e.stopPropagation();
+      onClick={() => {
         onClose();
       }}
-    >
-      {children}
-    </div>
+    />
   );
 };
 

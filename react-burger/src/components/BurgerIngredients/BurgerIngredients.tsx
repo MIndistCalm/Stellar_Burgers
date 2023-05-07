@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CardIngridient } from "./components/card-ingridient";
+import { CardIngridient } from "./components/CardIngridient";
 import { Tabs } from "./components/Tabs";
 import { Data } from "../../types";
 
@@ -13,6 +13,23 @@ interface DataProps {
 export const BurgerIngredients = ({ data }: DataProps) => {
   const [current, setCurrent] = useState(TabsEnum.BUN.toString());
 
+  const renderCategory = (title: string, type: string) => {
+    const categoryData = data.filter((item) => item.type === type);
+    if (categoryData.length === 0) {
+      return null;
+    }
+    return (
+      <div key={type}>
+        <h2 className="text text_type_main-medium mb-6">{title}</h2>
+        <section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
+          {categoryData.map((item) => (
+            <CardIngridient key={item._id} ingridient={item} />
+          ))}
+        </section>
+      </div>
+    );
+  };
+
   return (
     <section className={`${styles.ingredients_section}`}>
       <header className="mb-10">
@@ -20,45 +37,9 @@ export const BurgerIngredients = ({ data }: DataProps) => {
         <Tabs current={current} setCurrent={setCurrent} />
       </header>
       <article className={`${styles.categories_container}`}>
-        <div>
-          <h2 className="text text_type_main-medium mb-6">Булки</h2>
-          <section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
-            {data &&
-              data.map((item) => {
-                return (
-                  item.type === "bun" && (
-                    <CardIngridient key={item._id} ingridient={item} />
-                  )
-                );
-              })}
-          </section>
-        </div>
-        <div>
-          <h2 className="text text_type_main-medium mb-6">Соусы</h2>
-          <section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
-            {data &&
-              data.map((item) => {
-                return (
-                  item.type === "sauce" && (
-                    <CardIngridient key={item._id} ingridient={item} />
-                  )
-                );
-              })}
-          </section>
-        </div>
-        <div>
-          <h2 className="text text_type_main-medium mb-6">Начинки</h2>
-          <section className={`${styles.categories_section} pr-4 pl-4 pb-10`}>
-            {data &&
-              data.map((item) => {
-                return (
-                  item.type === "main" && (
-                    <CardIngridient key={item._id} ingridient={item} />
-                  )
-                );
-              })}
-          </section>
-        </div>
+        {renderCategory("Булки", "bun")}
+        {renderCategory("Соусы", "sauce")}
+        {renderCategory("Начинки", "main")}
       </article>
     </section>
   );

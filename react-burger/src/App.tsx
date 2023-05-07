@@ -7,6 +7,8 @@ import { Data } from "./types";
 import { AppHeader } from "./components/AppHeader/AppHeader";
 import { BurgerConstructor } from "./components/BurgerConstructor";
 import { BurgerIngredients } from "./components/BurgerIngredients/BurgerIngredients";
+import { BURGER_API_URL } from "./constants";
+import { getIngredients } from "./utils/burger-api";
 
 function App() {
   const [ingredients, setIngredients] = useState<{
@@ -17,21 +19,11 @@ function App() {
   });
 
   useEffect(() => {
-    const fetchIngredients = async () => {
-      try {
-        const response = await fetch(
-          "https://norma.nomoreparties.space/api/ingredients"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch ingredients");
-        }
-        const data = await response.json();
-        setIngredients(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchIngredients();
+    try {
+      getIngredients().then((data) => setIngredients(data));
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
 
   return (
