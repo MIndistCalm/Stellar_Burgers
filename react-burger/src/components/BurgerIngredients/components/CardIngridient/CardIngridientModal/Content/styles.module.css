@@ -1,0 +1,22 @@
+.popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.popup_info {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  color: rgba(133, 133, 173, 1);
+}
+
+.popup_info_item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
