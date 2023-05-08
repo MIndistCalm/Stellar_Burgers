@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <>
       <AppHeader />
       {ingredients.data.length ? (
         <section className="page-constructor">
@@ -35,7 +35,7 @@ function App() {
           <BurgerConstructor data={ingredients.data} />
         </section>
       ) : null}
-    </div>
+    </>
   );
 }
 

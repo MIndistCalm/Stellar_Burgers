@@ -1,8 +1,8 @@
 .constructor_section {
-  display: grid;
   max-width: max-content;
   width: 600px;
   align-self: start;
+  height: 100%;
   justify-self: start;
 }
 
@@ -10,12 +10,14 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  height: 60%;
 }
 .non_fixed_block {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-height: 656px;
+  height: inherit;
   overflow: hidden;
   overflow-y: visible;
 }
